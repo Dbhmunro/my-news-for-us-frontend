@@ -44,7 +44,7 @@ class State {
     static createListeners() {
         return State.all.forEach(function(state) {
             state.addSiteButton.addEventListener('click', state.toggleNewSiteForm.bind(state))
-            // state.form.addEventListener('submit', state.submitNewSiteForm)
+            state.form.addEventListener('submit', NewsSite.submitNewSiteForm)
         })
     }
 

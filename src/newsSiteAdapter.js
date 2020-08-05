@@ -11,4 +11,29 @@ class NewsSiteAdapter {
                 });
             })
     }
+
+    static createNewsSite({state_abbreviation, locality, name, url, news_outlet}) {
+        return fetch(NewsSiteAdapter.newsSitesPath, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                news_site: {
+                    state_abbreviation,
+                    locality,
+                    name,
+                    url,
+                    news_outlet
+                }
+            })
+        })
+        .then(function (responseObject) {
+            return responseObject.json()
+        })
+        .then(function(json) {
+            console.log(json)
+        })
+    }
 }

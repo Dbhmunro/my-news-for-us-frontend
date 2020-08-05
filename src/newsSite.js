@@ -27,4 +27,18 @@ class NewsSite {
             return newsSite.renderEntry()
         })
     }
+
+    static submitNewSiteForm(e) {
+        e.preventDefault()
+        // debugger
+        let site = {
+            "state_abbreviation": this.elements.state_abbreviation.value,
+            "locality": this.elements.locality.value,
+            "name": this.elements.name.value,
+            "url": this.elements.url.value,
+            "news_outlet": this.elements.news_outlet.value
+        }
+        NewsSiteAdapter.createNewsSite(site)
+        return site
+    }
 }
