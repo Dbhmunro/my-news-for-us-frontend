@@ -2,7 +2,7 @@ class NewsSite {
     static all = []
 
     constructor({state_abbreviation, name, locality, news_outlet, url, broken_link}) {
-        this.state_abbreviation = state_abbreviation
+        this.state = State.all.find( state => state.abbreviation === state_abbreviation )
         this.name = name
         this.locality = locality
         this.newsOutlet = news_outlet
@@ -10,13 +10,16 @@ class NewsSite {
         this.brokenLink = broken_link
 
         NewsSite.all.push(this)
+        this.state.newsSites.push(this)
     }
 
     renderEntry() {
-        const ul = document.getElementById(`${this.state_abbreviation}`).getElementsByTagName('ul')[0]
-        return ul.innerHTML += `
-            <li><spread class='locality'>${this.locality}</spread> - <spread class='name'><a href=${this.url}>${this.name}</a></spread> - <spread class='newsOutlet'>${this.newsOutlet}</spread></li>
+        this.entry = document.createElement('li')
+        this.entry.innerHTML = `
+            <spread class='locality'>${this.locality}</spread> - <spread class='name'><a target="_blank" href=${this.url}>${this.name}</a></spread> - <spread class='newsOutlet'>${this.newsOutlet}</spread>
         `
+        this.state.siteList.appendChild(this.entry)
+        return this.entry
     }
 
     static renderNewsSites() {
