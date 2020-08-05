@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d6d6d6;
+    margin: 0 auto;
+    height: 70px;
+}
+
+header h2 {
+    padding: 20px;
+    margin: 0;
+    font-size: 30px;
+}
+
+.main {
+    background-color: rgb(76, 43, 226);
+    display: block;
+    /* margin-top: 100px; */
+    /* width: 80%; */
+    /* margin-left: 20%; */
+}
+
+.filter {
+    background-color: aqua;
+    width: 20%;
+    display:inline-block;
+    vertical-align: baseline;
+}
+
+.results {
+    background-color: blueviolet;
+    width: 80%;
+    float: right;
+    display: inline-block;
+    text-align: center;
+}
+
+.card {
+    background-color: #c7c1b2;
+    position: relative;
+    width: 90%;
+    display: inline-block;
+    text-align: left;
+    border: 2px solid #003B62;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 5px;
+}
