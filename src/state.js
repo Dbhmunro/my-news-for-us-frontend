@@ -17,7 +17,7 @@ class State {
         this.card.innerHTML = `
                 <h3>${this.name}</h3>
                 <ul></ul>
-                <p>Don't see your local site? <button showingForm=false>Add one for ${this.abbreviation}</button></p>
+                <p>Don't see your local site for ${this.name}? <button showingForm=false>Add One</button></p>
                 <form></form>
             `
         // cardContainer.innerHTML += `

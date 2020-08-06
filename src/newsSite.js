@@ -39,6 +39,8 @@ class NewsSite {
             "news_outlet": this.elements.news_outlet.value
         }
         NewsSiteAdapter.createNewsSite(site)
+        this.reset()
+        this.parentElement.getElementsByTagName('button')[0].click()
         return site
     }
 }

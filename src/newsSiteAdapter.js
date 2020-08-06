@@ -32,8 +32,11 @@ class NewsSiteAdapter {
         .then(function (responseObject) {
             return responseObject.json()
         })
-        .then(function(json) {
-            console.log(json)
+        .then(function(newsSite) {
+            return new NewsSite(newsSite)
+        })
+        .then(function(site) {
+            return site.renderEntry()
         })
     }
 }
