@@ -31,7 +31,7 @@ class NewsSite {
 
     static submitNewSiteForm(e) {
         e.preventDefault()
-        debugger
+        // debugger
         let site = {
             "state_abbreviation": this.elements.state_abbreviation.value,
             "locality": this.elements.locality.value,
@@ -47,7 +47,7 @@ class NewsSite {
     }
 
     deleteNewsSite(e) {
-        debugger
+        // debugger
         if (e.target.value === "delete") {
             //stop the submit from triggering
             // e.preventDefault()
