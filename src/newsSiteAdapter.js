@@ -1,6 +1,6 @@
 class NewsSiteAdapter {
     static newsSitesPath = "http://localhost:3000/news_sites"
-    static newsSitePath = (id) => newsSitesPath + `${id}`
+    static newsSitePath = (id) => NewsSiteAdapter.newsSitesPath + `/${id}`
 
     static fetchNewsSites() {
         return fetch(NewsSiteAdapter.newsSitesPath)
@@ -37,6 +37,16 @@ class NewsSiteAdapter {
         })
         .then(function(site) {
             return site.renderEntry()
+        })
+    }
+
+    static deleteNewsSite(id) {
+        return fetch(NewsSiteAdapter.newsSitePath(id), {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
         })
     }
 }
